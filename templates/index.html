@@ -3,41 +3,165 @@
 <head>
     <title>Heart Disease Predictor</title>
     <style>
-        body { font-family: Arial; text-align: center; padding: 20px; }
-        form { max-width: 600px; margin: auto; }
-        input, select { width: 100%; padding: 8px; margin: 5px 0; }
-        .btn { background-color: #4CAF50; color: white; padding: 10px; border: none; cursor: pointer; }
-        .result { font-size: 1.2em; margin-top: 20px; }
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #050606, #1f2937);
+            color: #8a8796;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(27, 28, 26, 0.919);
+            color: #3598bfd4;
+        }
+
+        form {
+            max-width: 600px;
+            background: rgba(4, 10, 11, 0.522);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(85, 43, 158, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        form:hover {
+            transform: translateY(-5px);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            font-size: 1em;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            background: rgba(5, 5, 6, 0.758);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(45, 43, 50, 0.599);
+        }
+
+        input::placeholder {
+            color: #97a0ac;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #042d6f, #60a5fa);
+            color: #ffffff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(45deg, #ebedf1, #3b82f6);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .result {
+            font-size: 1.4em;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            color: #e5e7eb;
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            form {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1> Heart Disease Prediction</h1>
-    <form action="/predict" method="post">
-        <input type="number" name="age" placeholder="Age" required>
-        <select name="sex"><option value="0">Female</option><option value="1">Male</option></select>
-        <select name="cp">
-            <option value="0">Typical Angina</option>
-            <option value="1">Atypical Angina</option>
-            <option value="2">Non-anginal Pain</option>
-            <option value="3">Asymptomatic</option>
-        </select>
-        <input type="number" name="trestbps" placeholder="Resting Blood Pressure" required>
-        <input type="number" name="chol" placeholder="Serum Cholesterol" required>
-        <select name="fbs"><option value="0">FBS ≤ 120</option><option value="1">FBS > 120</option></select>
-        <select name="restecg"><option value="0">Normal</option><option value="1">ST-T Abnormality</option><option value="2">LV Hypertrophy</option></select>
-        <input type="number" name="thalach" placeholder="Max Heart Rate" required>
-        <select name="exang"><option value="0">No</option><option value="1">Yes</option></select>
-        <input type="number" step="0.1" name="oldpeak" placeholder="Oldpeak" required>
-        <select name="slope"><option value="0">Upsloping</option><option value="1">Flat</option><option value="2">Downsloping</option></select>
-        <select name="ca"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
-        <select name="thal"><option value="0">Normal</option><option value="1">Fixed Defect</option><option value="2">Reversible Defect</option></select>
-        <button type="submit" class="btn">🔍 Predict</button>
-    </form>
+    <div>
+        <h1>Heart Disease Prediction</h1>
+        <form action="/predict" method="post">
+            <input type="number" name="age" placeholder="Age" required>
+            <select name="sex">
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
+            <select name="cp">
+                <option value="0">0-Typical Angina</option>
+                <option value="1">1-Atypical Angina</option>
+                <option value="2">2-Non-anginal Pain</option>
+                <option value="3">3-Asymptomatic</option>
+            </select>
+            <input type="number" name="trestbps" placeholder="Resting Blood Pressure" required>
+            <input type="number" name="chol" placeholder="Serum Cholesterol" required>
+            <input type="number" name="fbs" placeholder="Fasting Blood Sugar (above 70)" required>
+            <select name="restecg">
+                <option value="0">Normal</option>
+                <option value="1">ST-T Abnormality</option>
+                <option value="2">LV Hypertrophy</option>
+            </select>
+            <input type="number" name="thalach" placeholder="Max Heart Rate" required>
+            <select name="exang">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+            <input type="number" name="oldpeak" step="0.1" placeholder="Old Peak (e.g., 0.1)" required>
+            <select name="slope">
+                <option value="0">0-Upsloping</option>
+                <option value="1">1-Flat</option>
+                <option value="2">2-Downsloping</option>
+            </select>
+            <select name="ca">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <select name="thal">
+                <option value="0">Normal</option>
+                <option value="1">Fixed Defect</option>
+                <option value="2">Reversible Defect</option>
+            </select>
+            <button type="submit" class="btn">Predict</button>
+        </form>
 
-    {% if result %}
-    <div class="result">
-        <p><strong>Prediction:</strong> {{ result }}</p>
+        {% if result %}
+        <div class="result">
+            <p><strong>Prediction:</strong> {{ result }}</p>
+        </div>
+        {% endif %}
     </div>
-    {% endif %}
 </body>
 </html>
