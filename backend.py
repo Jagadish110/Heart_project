@@ -18,7 +18,7 @@ app.add_middleware(
 )
 
 # Load the ML model
-MODEL_PATH = Path(__file__).parent / "model.pkl"
+MODEL_PATH = Path(__file__).parent / "heart_webpage.pkl"
 model = joblib.load(MODEL_PATH)
 
 # Serve templates
