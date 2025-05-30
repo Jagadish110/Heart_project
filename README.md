@@ -46,5 +46,5 @@ This project predicts the likelihood of heart disease in a patient based on clin
 
 Clone the repository:
 ```bash
-git clone https://github.com/yourusername/heart-disease-prediction.git
+git clone https://github.com/Jagadish110/Heart_project
 cd heart-disease-prediction
