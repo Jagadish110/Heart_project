@@ -1,50 +1,41 @@
- Heart Disease Prediction Using Machine Learning
 
-This project predicts the likelihood of heart disease in a patient based on clinical and lifestyle features. It uses machine learning for classification and provides an interactive web interface built with Streamlit. The backend is powered by FastAPI and the model is deployed on Render.
+❤️ Heart Disease Prediction Using Machine Learning
+🚑 Predict the likelihood of heart disease using clinical and lifestyle features. Built with FastAPI, Streamlit, and deployed on Render.
 
----
+📚 Table of Contents
+🔗 Live Demo
 
- Table of Contents
-- [Demo](#-demo)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Model Details](#-model-details)
-- [Screenshots](#-screenshots)
-- [License](#-license)
+✨ Features
 
----
+🧰 Tech Stack
 
+⚙️ Installation
 
-**Live App**: *[https://heart-prediction-owyj.onrender.com]*  
+🚀 Usage
 
+🧠 Model Details
 
----
+📸 Screenshots
 
-## 🚀 Features
-- Predicts risk of heart disease based on user inputs
-- Fast, lightweight backend with **FastAPI**
-- User-friendly web interface using **HTML&CSS**
-- REST API endpoint for ML model inference
-- Interactive data form and real-time prediction
-- Deployed and accessible online (Render)
+📄 License
 
----
+🔗 Live Demo
+🌐 Try it Now → Heart Disease Prediction App (Render)
 
- Tech Stack
-- **Frontend:** Streamlit
-- **Backend:** FastAPI
-- **Machine Learning:** scikit-learn
-- **Languages:** Python
-- **Deployment:** Render
-- **Libraries:** NumPy, Pandas, matplotlib
+✨ Features
+✅ Predicts risk of heart disease from health metrics
+⚡ Fast, lightweight backend using FastAPI
+🎨 Clean and interactive UI with Streamlit
+🔁 Real-time form input → model prediction
+📦 REST API endpoint for integration
+🚀 Deployed on Render for public access
 
----
+🧰 Tech Stack
+Layer	Tech Used
+💻 Frontend	Streamlit (Python)
+⚙️ Backend	FastAPI
+📊 ML Model	Scikit-learn (Logistic Regression)
+🧪 Libraries	NumPy, Pandas, Matplotlib
+☁️ Hosting	Render
+🧠 Language	Python
 
-## 🛠️ Installation
-
-Clone the repository:
-```bash
-git clone https://github.com/Jagadish110/Heart_project
-cd heart-disease-prediction
